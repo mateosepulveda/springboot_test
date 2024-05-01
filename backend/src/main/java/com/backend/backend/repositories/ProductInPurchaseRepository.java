@@ -18,7 +18,6 @@ public interface ProductInPurchaseRepository extends JpaRepository<ProductInPurc
     void deleteByPurchaseIdAndProductId(Long purchaseId, Long productId);
 
     @Transactional
-    @Modifying
     @Query("SELECT p FROM ProductInPurchase p WHERE p.purchase.id = :purchaseId AND p.product.id = :productId")
     Optional<ProductInPurchase> findByPurchaseIdAndProductId(Long purchaseId, Long productId);
 }

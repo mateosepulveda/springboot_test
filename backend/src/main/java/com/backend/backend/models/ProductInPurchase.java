@@ -1,5 +1,6 @@
 package com.backend.backend.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -13,6 +14,7 @@ public class ProductInPurchase {
     private Long id;
 
     @ManyToOne
+    @JsonIgnore
     private Purchase purchase;
 
     @ManyToOne
